@@ -1,0 +1,234 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 34567890;
+}
+
+.header-leftmain{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: calc(2 * var(--offset));
+}
+
+.header__content{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    height: calc(6 * var(--offset));
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 34567890;
+
+    @media screen and (max-width: 1150px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 75%;
+    }
+
+    @media screen and (max-width: 650px) {
+        width: 95%;
+        justify-content: space-between;
+    }
+}
+
+.header-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
+}
+
+.header-logo>img{
+    height: calc(3.8 * var(--offset));
+    margin-right: calc(4.5 * var(--offset));
+}
+
+.header-list{
+    display: flex;
+    gap: calc(4 * var(--offset));
+
+    @media screen and (max-width: 1150px) {
+        gap: calc(3 * var(--offset));
+    }
+}
+
+.header-list__item{
+    display:inline-block;
+    position:relative;
+    transition: 0.3s all ease-in-out;
+}
+
+.header-list__item:hover{
+    transition: 0.3s all ease-in-out;
+}
+
+.header-list__item::before{
+    transition: 0.3s all ease-in-out;
+}
+
+.header-list__item:hover::before {
+    content:"";
+    position:absolute;
+    bottom:-30px;
+    background:var(--c3);
+    width:12px;
+    height:12px;
+    border-radius:100%;
+    left:calc(51% - 9px);
+    animation: circle 0.3s linear;
+    transition: 0.3s all ease-in-out;
+ }
+
+ @keyframes circle {
+    0%{
+        opacity: 0;
+        transition: 0.3s all ease-in-out;
+    }
+
+    100%{
+        opacity: 1;
+        transition: 0.3s all ease-in-out;
+    }
+ }
+
+.header-list__link{
+    color: var(--c2);
+    font-size: calc(0.9 * var(--fs));
+    font-family: 'Nunito Bold';
+    transition: 0.3s all ease-in-out;
+
+    &:hover{
+        color: var(--c3);
+    }
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-widgets{
+    display: flex;
+    align-items: center;
+    gap: calc(2.5 * var(--offset));
+}
+
+.header-widgets__link{
+    font-family: 'Nunito Bold';
+    color: var(--c2);
+    transition: 0.4s all ease-in-out;
+    font-size: calc(0.9 * var(--fs));
+
+    &:hover{
+        color: var(--c3);
+    }
+
+    svg{
+        fill: var(--c2);
+        stroke: var(--c2);
+        width: calc(1.8 * var(--offset));
+        transition: 0.4s all ease-in-out;
+
+        &:hover{
+            fill: var(--c3);
+            stroke: var(--c3);
+        }
+    }
+}
+
+.menu-button{
+    position: fixed;
+    right: 0;
+    top: -0.5%;
+    width: calc(15 * var(--offset));
+    border: none;
+    background: transparent;
+
+
+    @media screen and (max-width: 2450px) {
+        top: -1%;
+    }
+
+    @media screen and (max-width: 2300px) {
+        top: -1.7%;
+    }
+
+    @media screen and (max-width: 2150px) {
+        top: -2.2%;
+    }
+
+    @media screen and (max-width: 1950px) {
+        top: -2.7%;
+    }
+
+    @media screen and (max-width: 1750px) {
+        top: -3.2%;
+    }
+    @media screen and (max-width: 1710px) {
+        top: -3.7%;
+    }
+
+    @media screen and (max-width: 1550px) {
+        top: -3.9%;
+    }
+
+    @media screen and (max-width: 1400px) {
+        top: -4.2%;
+    }
+
+    @media screen and (max-width: 650px) {
+        display: none;
+    }
+}
+
+.dropicon{
+    top: 0;
+    fill: var(--c3);
+    width: 105%;
+    transition: 0.2s all ease-in-out;
+    width: calc(15 * var(--offset));
+}
+
+.burger{
+    fill: var(--c1);
+    width: calc(2 * var(--offset));
+    position: absolute;
+    z-index: 1234567;
+    top: 0;
+    left: 45%;
+    transition: 0.2s all ease-in-out;
+}
+
+.language__header{
+    transition: 0.4s all ease-in-out;
+    cursor: pointer;
+}
+
+.language__header:hover{
+    color: var(--c3);
+}
+
+.burger:hover .dropicon{
+    fill: var(--c2);
+}
+
+details > summary{
+    list-style: none;
+}
+
+.header-widgets__item:nth-child(3){
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+}
